@@ -1,0 +1,30 @@
+@import "../_variables.scss";
+@import "../_mediaQuery";
+
+// @import "../_Mixins";
+@import "../_normalize";
+
+// home page components
+@import "../Components/_Buttons";
+@import "../Components/_header";
+@import "../Components/_content";
+
+body, html {
+    font-family: 'Cairo';
+    font-size: 16px;
+    scroll-behavior: smooth;
+    @include max1200 {
+        font-size: 14px;
+    }
+    @include maxAll992 {
+        font-size: 12px;
+    }
+}
+
+*, button:focus, input:focus {
+    outline: none;
+}
+
+a:hover {
+    text-decoration: none;
+}

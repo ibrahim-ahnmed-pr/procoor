@@ -1,0 +1,190 @@
+header {
+    position: sticky;
+    top: 0;
+    z-index: 999;
+
+    @include max576 {
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+    }
+
+
+    nav {
+        background-color: rgb(255, 255, 255);
+
+        .navbar-brand {
+            img {
+                width: 120px;
+                transition: all 0.5s ease-in-out;
+            }
+        }
+
+        .nav-item {
+            .nav-link {
+                position: relative;
+                overflow: hidden;
+                transition: all 0.4s ease-in-out;
+                text-transform: capitalize;
+
+                &::after {
+                    content: '';
+                    bottom: 0;
+                    position: absolute;
+                    right: 8px;
+                    left: 8px;
+                    background-color: $primary;
+                    height: 3px;
+                    transition: all 0.3s ease-in-out;
+                    transform: translateY(8px);
+                }
+
+                &:hover {
+                    color: $primary !important;
+
+                    &::after {
+                        transform: translateY(0);
+
+                        @include max768 {
+                            display: none;
+                        }
+
+
+                        @include max576 {
+                            display: none;
+                        }
+                    }
+                }
+            }
+
+            &.active {
+                .nav-link {
+                    color: $primary !important;
+
+                    &::after {
+                        transform: translateY(0);
+
+                        @include max768 {
+                            display: none;
+                        }
+
+
+                        @include max576 {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &.fixed__header {
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+    }
+}
+
+.header__wrapper {
+    @include max768 {
+        height: auto !important;
+        padding: 75px 0px;
+    }
+
+
+    @include max576 {
+        height: auto !important;
+        padding: 75px 0px;
+    }
+
+
+    .header__wrapper--info {
+        padding-left: 120px;
+        overflow: hidden;
+
+        @include max576 {
+            padding-left: 25px;
+        }
+
+
+        .welcome-title {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .fa {
+                font-size: 3.8rem;
+                color: $primary;
+            }
+
+            h1 {
+                color: $secondary;
+                font-size: 2.1rem;
+                font-weight: 800;
+
+                strong {
+                    display: block;
+                }
+            }
+        }
+    }
+
+    .construction__slider {
+        .item {
+            img {
+                max-width: 100%;
+                margin: auto;
+            }
+        }
+    }
+
+    /* product header page */
+    &.header__page {
+        padding: 85px 0;
+        position: relative;
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 0;
+        }
+        &.hr {
+            background: url(../../images/Procoor__pageCover.jpg) 100% no-repeat fixed;
+        }
+        &.ac {
+            background: url(../../images/accountbg.png) 100% no-repeat fixed;
+        }
+        &.fm {
+            background: url(../../images/fcbg.png) 100% no-repeat fixed;
+        }
+        .welcome-title {
+            position: relative;
+            z-index: 1;
+
+            h1 {
+                color: $white;
+            }
+
+            p {
+                color: $white;
+            }
+        }
+    }
+
+    /* product header page */
+}
+
+.header__height {
+    height: calc(100%);
+}
+
+.auto__height {
+    display: flex !important;
+    align-items: flex-end;
+
+    .auto__height--img {
+        height: 70% !important;
+        margin-bottom: 0  !important;
+    }
+}
